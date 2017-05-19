@@ -465,9 +465,9 @@ a {
   #masthead .dropdown-menu {
     display: none;
     position: absolute;
+    background-color: green;
     top: 0;
     right: 10em;
-    background-color: green;
     padding: .5em 1em;
     box-shadow: 0 1px 2px 0 rgba(153, 153, 153, 0.35); }
     #masthead .dropdown-menu a {
@@ -477,14 +477,24 @@ a {
       text-transform: uppercase;
       color: #fff; }
     #masthead .dropdown-menu ul {
+      background-color: green;
       list-style-type: none;
       margin: 0;
       padding: 0; }
-      #masthead .dropdown-menu ul:hover ul.sub-menu {
-        display: block; }
       #masthead .dropdown-menu ul li {
+        position: relative;
         margin: 0;
         padding: 0; }
+        #masthead .dropdown-menu ul li:hover .sub-menu {
+          visibility: visible;
+          /* shows sub-menu */
+          opacity: 1;
+          z-index: 1;
+          -webkit-transform: translateY(0%);
+                  transform: translateY(0%);
+          -webkit-transition-delay: 0s, 0s, 0.3s;
+                  transition-delay: 0s, 0s, 0.3s;
+          /* this removes the transition delay so the menu will be visible while the other styles transition */ }
         #masthead .dropdown-menu ul li a:after {
           content: '';
           display: inline-block;
@@ -497,7 +507,18 @@ a {
           -webkit-transform: rotate(135deg);
                   transform: rotate(135deg); }
         #masthead .dropdown-menu ul li ul.sub-menu {
-          display: none; }
+          padding: .5em 1em;
+          margin: 0 1em;
+          visibility: hidden;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          -webkit-transform: translateY(-2em);
+                  transform: translateY(-2em);
+          z-index: -1;
+          -webkit-transition: all 0.5s ease-in-out 0s, visibility 0s linear 0.5s, z-index 0s linear 0.05s;
+          transition: all 0.5s ease-in-out 0s, visibility 0s linear 0.5s, z-index 0s linear 0.05s; }
           #masthead .dropdown-menu ul li ul.sub-menu li a:after {
             display: none; }
   #masthead .header-wrapper {
