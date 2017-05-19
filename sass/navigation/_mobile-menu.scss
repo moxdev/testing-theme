@@ -23,21 +23,18 @@
         width: 35px;
         height: 35px;
     }
+
+    @include respond-to(large) {
+        display: none;
+    }
 }
 
 .mobile-menu {
     display: none;
-
-    .menu-mobile-menu-container {
-
-    }
-}
-
-.mobile-menu.toggled {
     background-color: #000;
-    display: block;
+    border-top: 1px solid #fff;
     position:absolute;
-    top: 81px;
+    top: 87px;
     left: 0;
     right: 0;
     height:auto;
@@ -46,32 +43,30 @@
     overflow:hidden;
     z-index:9999;
 
+    a {
+        font-size: .75em;
+    }
+
+    .current-menu-item {
+        color:red;
+    }
+
     .menu-mobile-menu-container {
-        display: block !important;;
         padding-top: 1.5em;
 
         ul {
-            display: block !important;
             list-style: none;
             margin: 0;
             padding:0;
             @include padding-left-right;
             text-align: left;
 
-            .current-menu-item {
-                color:#fff;
-            }
-
             li {
-                display: block !important;
                 margin: 0;
                 padding-bottom: 1em;
-                // position: relative;
 
                 a {
-                    width: 100%;
                     color:#fff;
-                    display: block !important;
                     padding:0;
                     text-decoration:none;
                     text-align: left;
@@ -89,14 +84,14 @@
                     &:hover, &:visited, &:active, :link {
                         color: #fff;
                     }
+                }
 
-                    ul {
-                        li {
-                            a {
-                                text-transform: capitalize;
-                                text-decoration: none;
-                                font-size: .9em;
-                            }
+                ul {
+                    li {
+                        a {
+                            text-transform: capitalize;
+                            text-decoration: none;
+                            font-size: .9em;
                         }
                     }
                 }
@@ -104,12 +99,24 @@
         }
     }
 
+    @include respond-to(large) {
+        display: none;
+    }
+}
+
+.mobile-menu.toggled {
+    display: block !important;
+
+    .menu-mobile-menu-container {
+        display: block !important;
+    }
+
     @include respond-to(small) {
-        top:80px
+        top:98px
     }
 
     @include respond-to(large) {
-        display: none;
+        display: none !important;
     }
 }
 
