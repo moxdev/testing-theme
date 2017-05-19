@@ -431,14 +431,54 @@ a {
 ## Masthead
 --------------------------------------------------------------*/
 #masthead {
+  background-color: #000;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  position: relative; }
   @media screen and (min-width: 750px) {
     #masthead {
       padding-left: 2.75rem;
       padding-right: 2.75rem; } }
+  #masthead .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 2em;
+    background-color: green;
+    padding: .5em 1em;
+    box-shadow: 0 1px 2px 0 rgba(153, 153, 153, 0.35); }
+    #masthead .dropdown-menu a {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff; }
+    #masthead .dropdown-menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+      #masthead .dropdown-menu ul:hover ul.sub-menu {
+        display: block; }
+      #masthead .dropdown-menu ul li {
+        margin: 0;
+        padding: 0; }
+        #masthead .dropdown-menu ul li a:after {
+          content: '';
+          display: inline-block;
+          margin-left: 0.6em;
+          width: .75em;
+          height: .75em;
+          margin-bottom: 2px;
+          border-top: .2em solid #fff;
+          border-right: .2em solid #fff;
+          -webkit-transform: rotate(135deg);
+                  transform: rotate(135deg); }
+        #masthead .dropdown-menu ul li ul.sub-menu {
+          display: none; }
+          #masthead .dropdown-menu ul li ul.sub-menu li a:after {
+            display: none; }
   #masthead .header-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -458,6 +498,85 @@ a {
 /*--------------------------------------------------------------
 ## Mobile Menu
 --------------------------------------------------------------*/
+.menu-toggle {
+  display: block;
+  background-color: red;
+  color: #fff;
+  text-transform: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 0; }
+  .menu-toggle:hover {
+    -webkit-transition: background-color .25s;
+    transition: background-color .25s; }
+  .menu-toggle img {
+    width: 35px;
+    height: 35px; }
+
+.mobile-menu {
+  display: none; }
+
+.mobile-menu.toggled {
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 81px;
+  left: 0;
+  right: 0;
+  height: auto;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  z-index: 9999; }
+  .mobile-menu.toggled .menu-mobile-menu-container {
+    display: block !important;
+    padding-top: 1.5em; }
+    .mobile-menu.toggled .menu-mobile-menu-container ul {
+      display: block !important;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+      text-align: left; }
+      @media screen and (min-width: 750px) {
+        .mobile-menu.toggled .menu-mobile-menu-container ul {
+          padding-left: 2.75rem;
+          padding-right: 2.75rem; } }
+      .mobile-menu.toggled .menu-mobile-menu-container ul .current-menu-item {
+        color: #fff; }
+      .mobile-menu.toggled .menu-mobile-menu-container ul li {
+        display: block !important;
+        margin: 0;
+        padding-bottom: 1em; }
+        .mobile-menu.toggled .menu-mobile-menu-container ul li a {
+          width: 100%;
+          color: #fff;
+          display: block !important;
+          padding: 0;
+          text-decoration: none;
+          text-align: left;
+          font-size: 1rem;
+          text-transform: uppercase; }
+          @media screen and (min-width: 575px) {
+            .mobile-menu.toggled .menu-mobile-menu-container ul li a {
+              font-size: 1.5rem; } }
+          @media screen and (min-width: 950px) {
+            .mobile-menu.toggled .menu-mobile-menu-container ul li a {
+              font-size: 1.8rem; } }
+          .mobile-menu.toggled .menu-mobile-menu-container ul li a:hover, .mobile-menu.toggled .menu-mobile-menu-container ul li a:visited, .mobile-menu.toggled .menu-mobile-menu-container ul li a:active, .mobile-menu.toggled .menu-mobile-menu-container ul li a :link {
+            color: #fff; }
+          .mobile-menu.toggled .menu-mobile-menu-container ul li a ul li a {
+            text-transform: capitalize;
+            text-decoration: none;
+            font-size: .9em; }
+  @media screen and (min-width: 750px) {
+    .mobile-menu.toggled {
+      top: 80px; } }
+  @media screen and (min-width: 1200px) {
+    .mobile-menu.toggled {
+      display: none; } }
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

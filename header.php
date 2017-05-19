@@ -24,26 +24,38 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'testing-theme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+
+			<?php  if ( function_exists( 'get_field' ) ) {
+
+			        $drop_menu = get_field('add_dropdown_menu', 'options');
+
+			        if( $drop_menu ):  ?>
+			            <div class="dropdown-menu">
+			                <?php wp_nav_menu( array( 'theme_location' => 'drop-menu', 'menu_id' => 'drop-menu' ) ); ?>
+			            </div>
+			        <?php endif;
+
+			}  ?>
+
 			<div class="header-wrapper">
 				<div class="site-branding">
 
-					<a class="logo" href="<?php echo home_url(); ?>"><img src="http://placeholder.pics/svg/300x200/000000/ff0000/logo.svg"></a>
+					<a class="logo" href="<?php echo home_url(); ?>"><img src="http://placeholder.pics/svg/300x200/ff0000/ffffff/logo.svg"></a>
 
 				</div><!-- .site-branding -->
 
-				<div class="toggle-container">
-					<button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false"><img class="mobile-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAsklEQVRoQ+2WMQ7EIAwE4/8/mijl6YopnFXAmrQOK5hBxnUd/tXh+788wNcGNaCBJgGvUBNge/k8A2ut1cYSDKiqH+h/BjxAkP4TPd9AGODr8fO60OuIwoEaCAPGeA0govAP8ww4SqSvjMNcmDDF4zBHAbvV53Wh3QjTfjRAhNJ1DaQJU/48A85C5LxZx5dYA03CtBwNUMBu9XldaDfCtB8NEKF0XQNpwpSvASKUrh9v4AbQsjAxOjNvzAAAAABJRU5ErkJggg==" width="48" height="48"></button>
-				</div>
+				<button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false"><img class="mobile-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAsklEQVRoQ+2WMQ7EIAwE4/8/mijl6YopnFXAmrQOK5hBxnUd/tXh+788wNcGNaCBJgGvUBNge/k8A2ut1cYSDKiqH+h/BjxAkP4TPd9AGODr8fO60OuIwoEaCAPGeA0govAP8ww4SqSvjMNcmDDF4zBHAbvV53Wh3QjTfjRAhNJ1DaQJU/48A85C5LxZx5dYA03CtBwNUMBu9XldaDfCtB8NEKF0XQNpwpSvASKUrh9v4AbQsjAxOjNvzAAAAABJRU5ErkJggg=="></button>
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 
 					<?php wp_nav_menu( array( 'theme_location' => 'desktop-nav', 'menu_id' => 'primary-menu' ) ); ?>
 
-					<div class="mobile-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'mobile-nav', 'menu_id' => 'mobile-menu' ) ); ?>
-					</div>
-
 				</nav><!-- #site-navigation -->
+
+				<div class="mobile-menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'mobile-nav', 'menu_id' => 'mobile-menu' ) ); ?>
+				</div>
+
 			</div>
 		</header><!-- #masthead -->
 

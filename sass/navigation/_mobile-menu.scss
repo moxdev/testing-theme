@@ -1,9 +1,119 @@
+// Button
+.menu-toggle {
+    display: block;
+    background-color: red;
+    color: #fff;
+    text-transform: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    // transition:background-color .25s;
+
+    &:hover {
+        transition:background-color .25s;
+    }
+
+    &:active,
+    &:focus {
+        // background-color: transparent;
+
+    }
+
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
 .mobile-menu {
+    display: none;
 
     .menu-mobile-menu-container {
 
     }
 }
+
+.mobile-menu.toggled {
+    background-color: #000;
+    display: block;
+    position:absolute;
+    top: 81px;
+    left: 0;
+    right: 0;
+    height:auto;
+    text-align: center;
+    color: #fff;
+    overflow:hidden;
+    z-index:9999;
+
+    .menu-mobile-menu-container {
+        display: block !important;;
+        padding-top: 1.5em;
+
+        ul {
+            display: block !important;
+            list-style: none;
+            margin: 0;
+            padding:0;
+            @include padding-left-right;
+            text-align: left;
+
+            .current-menu-item {
+                color:#fff;
+            }
+
+            li {
+                display: block !important;
+                margin: 0;
+                padding-bottom: 1em;
+                // position: relative;
+
+                a {
+                    width: 100%;
+                    color:#fff;
+                    display: block !important;
+                    padding:0;
+                    text-decoration:none;
+                    text-align: left;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+
+                    @include respond-to(x-small) {
+                        font-size: 1.5rem;
+                    }
+
+                    @include respond-to(medium) {
+                        font-size: 1.8rem;
+                    }
+
+                    &:hover, &:visited, &:active, :link {
+                        color: #fff;
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                text-transform: capitalize;
+                                text-decoration: none;
+                                font-size: .9em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to(small) {
+        top:80px
+    }
+
+    @include respond-to(large) {
+        display: none;
+    }
+}
+
+
 
 
 
