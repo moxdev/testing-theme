@@ -44,7 +44,9 @@ function testing_theme_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'testing-theme' ),
+        'desktop-nav' => esc_html__( 'Primary', 'testing-theme' ),
+        'mobile-nav'  => esc_html__( 'Mobile', 'testing-theme' ),
+        'drop-menu'   => esc_html__( 'Green Drop Menu', 'testing-theme' )
 	) );
 
 	/*
@@ -82,6 +84,25 @@ function testing_theme_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'testing_theme_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'testing_theme_content_width', 0 );
+
+// ACF Options
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Menu Settings',
+		'menu_title'	=> 'Dropdown Menu',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+}
 
 /**
  * Register widget area.
@@ -141,3 +162,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+// require get_template_directory() . '/inc/acf-options-messages.php';
