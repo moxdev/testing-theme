@@ -1,0 +1,130 @@
+#masthead {
+	@include padding-left-right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	.header-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.site-branding {
+
+			img {
+				max-width: 100px;
+				display: block;
+			}
+		}
+
+		.menu-toggle {
+
+
+		}
+
+		.main-navigation {
+			display: none;
+
+			.menu-primary-menu-container {
+
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Desktop Styles
+//
+// #masthead {
+// 	background-color: #000;
+// 	color: #fff;
+// 	width: 100%;
+// 	height: auto;
+// 	padding: 2em 2em 0;
+
+// 	a {
+// 		color: #fff;
+// 		text-decoration: none;
+// 	}
+
+// 	.header-wrapper {
+// 		display: flex;
+// 		justify-content: space-around;
+// 		align-items: baseline;
+// 	}
+
+// 	.site-branding {
+// 		margin-right: auto;
+// 	}
+
+// 	.dropdown-menu {
+// 		display: block;
+// 		flex: none;
+// 		position: absolute;
+// 		top: 0;
+// 		right: 6em;
+
+// 		.menu-dropdown-menu-container {
+// 			background-color: green;
+// 			padding:1em 1.5em;
+
+// 			ul {
+// 				list-style-type: none;
+// 				margin: 0;
+// 				padding: 0;
+
+// 				&:hover {
+// 					li {
+// 						ul {
+// 							display: block;
+// 						}
+// 					}
+// 				}
+
+// 				li {
+// 					margin: 0;
+// 					padding: 0;
+
+// 					a {
+// 					}
+
+// 					ul {
+// 						display: none;
+
+// 						li {
+
+// 						}
+// 					}
+
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	.main-navigation {
+// 		margin-left: auto;
+
+// 		ul {
+// 			list-style: none;
+// 			display: inline-flex;
+
+// 			li {
+// 				margin: 0 .5em;
+// 			}
+// 		}
+
+// 	}
+// }
