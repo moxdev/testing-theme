@@ -543,8 +543,12 @@ a {
             text-transform: uppercase;
             text-decoration: none;
             color: #fff;
-            width: 100px;
-            margin: 0 .5em; }
+            width: 90px;
+            margin: 0 .25em;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            font-size: .9em; }
             @media screen and (min-width: 1500px) {
               #masthead .header-wrapper .main-navigation .menu-primary-menu-container ul li a {
                 width: 90px; } }
@@ -557,6 +561,8 @@ a {
       #masthead .header-wrapper .site-branding img {
         max-width: 150px; } }
   @media screen and (min-width: 1200px) {
+    #masthead .dropdown-menu {
+      right: 3em; }
     #masthead .header-wrapper {
       -webkit-box-align: end;
           -ms-flex-align: end;
